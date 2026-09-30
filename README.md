@@ -1,27 +1,28 @@
 # Legal Auto Research
 
-Legal Auto Research 的私有内测分发仓库。
+Legal Auto Research 的 Windows 便携包分发仓库。仓库文件仅提供使用说明，不发布应用源代码；源码仓库保持私有。
 
-本仓库不发布源代码。可运行的 Windows x64 便携包请从右侧 **Releases** 页面下载。
+## 下载与启动
 
-## 安装与启动
+1. 在 [最新 Release](https://github.com/beichen126/Legal-Auto-Research-Release/releases/latest) 下载完整的 `Legal-Auto-Research-win-x64-0.1.11.zip`。
+2. **完整解压到全新目录**。不要从 ZIP 预览中启动，不要只拖出启动文件，也不要覆盖旧版本。
+3. 解压目录应同时包含 `app`、`runtimes`、`workspace`；双击 `start.cmd`，静默启动用 `start-silent.cmd`，退出用 `stop.cmd`。
 
-1. 下载最新 Release 中的 `Legal-Auto-Research-win-x64-*.zip`。
-2. 将 ZIP **完整解压到一个全新目录**；不要直接在压缩包预览窗口内运行，也不要只拖出启动文件。
-3. 确认解压目录中同时存在 `app`、`runtimes` 和 `workspace` 文件夹。
-4. 双击 `LegalAutoResearch.pyw`，或运行 `start.cmd`。首次启动通常需要 1–2 分钟，退出时运行 `stop.cmd`。
+包内包含 Python、Node.js、Chromium 和依赖，无需另外安装 Python 或 Node.js。首次启动可能需要 1–3 分钟。
 
-便携包已经包含 Python、Node.js、Chromium 和所需依赖，不需要另外安装 Python。
+## 当前版本
 
-## 当前内测版
-
-- 版本：`v0.1.10-local-debug`
+- LAR：`v0.1.11`
+- DSH / dsh-tools：`0.2.0-rc.2`（上游候选版）
 - 平台：Windows x64
-- SHA-256：`10cd64869bfd7ff8ffc2ed200dfe58cee378e15287583ec2c839df931ce1b199`
+- 完整 ZIP 的 SHA-256：`03f22eaeb202fa0250605761058114b6e300e54794c775cc4afaba76fc5b63dd`
 
-## 注意事项
+本版迁移了新版 DSH 的法律预设注册方式，修复便携运行时打包检查和跨目录路径定位。资料库沿用上一版；详细变更与验证结果见 Release 说明。
 
-- 这是私有内测包，请勿转发或公开发布。
-- DeepSeek API Key 在 DSH 工作台内填写；MinerU API Key 在程序“设置”页填写。
-- 知网、北大法宝和人民法院案例库仍需使用者自己的合法账号、机构权限或校园网环境。
-- 如果提示缺少 `runtimes/python/python.exe`，通常是因为直接从 ZIP 内启动；请重新完整解压后再运行。
+## 使用边界
+
+- DeepSeek 模型密钥在 DSH 工作台内填写；MinerU 密钥在 LAR 设置页填写。
+- 知网、北大法宝和人民法院案例库仍需使用者自己的合法账号、机构权限或校园网，不绕过登录、验证码或付费墙。
+- 资料用于本地研究；转载或再分发需自行核实权利。
+- 若提示缺少 `runtimes/python/python.exe`，先确认完整解压了 ZIP，且没有被安全软件隔离；便携包并不要求另装 Python。
+- 更新时保留旧版本和旧工作区，新包解压到独立目录，不覆盖项目、会话、密钥和登录状态。
